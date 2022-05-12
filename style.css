@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&family=Varela+Round&display=swap');
+
+body {
+    background-color: antiquewhite;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    font-family: 'Source Sans Pro', sans-serif;
+
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    height: 65px;
+    background-color: black;
+    color: white;
+}
+
+nav ul li {
+    padding: 0px 12px;
+}
+
+.brand img {
+    width: 44px;
+    padding: 0px 8px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 1.3rem;
+}
+
+.container {
+    min-height: 70vh;
+    background-color: black;
+    color: white;
+    font-family: 'Varela Round', sans-serif;
+    display: flex;
+    margin: 25px auto;
+    padding: 34px;
+    width: 70%;
+    border-radius: 12px;
+    background-image: url(MusicBG.jpg);
+    background-size: cover;
+}
+
+.bottom {
+    position: sticky;
+    height: 120px;
+    background-color: black;
+    color: white;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.icons {
+    margin: 14px 0;
+}
+
+.icons i {
+    cursor: pointer;
+}
+
+#SongProgress {
+    width: 80vw;
+    cursor: pointer;
+}
+
+.songItemsContainer {
+    margin-top: 25px;
+}
+
+.songItems {
+    height: 50px;
+    display: flex;
+    background-color: white;
+    width: 100%;
+    color: black;
+    margin: 12px 0;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 40px;
+}
+
+.songItems img {
+    width: 43px;
+    margin: 0 10px;
+    border-radius: 100%;
+}
+
+.timeStamp {
+    margin: 0 10px;
+}
+
+.timeStamp i {
+    cursor: pointer;
+}
+
+.songInfo {
+    display: flex;
+    position: absolute;
+    font-family: 'Varela Round', sans-serif;
+    left: 10vw;
+}
+
+.songInfo label {
+    padding: 15px;
+}
+
+.songInfo img {
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+}
+
+@media only screen and (max-width : 1100px) {
+    .songInfo {
+        display: flex;
+        flex-direction: column;
+    }
+    .songInfo img {
+        opacity: 0;
+        transition: opacity 0.5s ease-in;
+    }
+}
