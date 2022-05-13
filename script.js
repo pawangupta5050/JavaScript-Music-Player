@@ -3,6 +3,7 @@ let audioElement = new Audio('Songs/2.mp3');
 let masterPlay = document.getElementById('masterPlay');
 let SongProgress = document.getElementById('SongProgress');
 let BeatGif = document.getElementById('BeatGif');
+let songBanner = document.getElementById('songBanner');
 let songItems = Array.from(document.getElementsByClassName('songItems'));
 let masterSongName = document.getElementById('masterSongName');
 
@@ -60,9 +61,11 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element) =>
             e.target.classList.add('fa-pause-circle');
             audioElement.src = `Songs/${songIndex}.mp3`;
             masterSongName.innerText = songs[songIndex].songName;
+            songBanner.src = songs[songIndex].coverPath;
             audioElement.currentTime = 0;
             audioElement.play();
             BeatGif.style.opacity = 1;
+            songBanner.style.opacity = 1;
             masterPlay.classList.remove('fa-circle-play');
             masterPlay.classList.add('fa-circle-pause');
         }
@@ -73,6 +76,7 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element) =>
             masterPlay.classList.remove('fa-circle-pause');
             masterPlay.classList.add('fa-circle-play');
             BeatGif.style.opacity = 0;
+            songBanner.style.opacity = 1;
         }
 
     })
@@ -87,6 +91,7 @@ document.getElementById('next').addEventListener('click', () => {
     }
     audioElement.src = `Songs/${songIndex}.mp3`;
     masterSongName.innerText = songs[songIndex].songName;
+    songBanner.src = songs[songIndex].coverPath;
     audioElement.currentTime = 0;
     audioElement.play();
     masterPlay.classList.remove('fa-circle-play');
@@ -102,6 +107,7 @@ document.getElementById('previous').addEventListener('click', () => {
     }
     audioElement.src = `Songs/${songIndex}.mp3`;
     masterSongName.innerText = songs[songIndex].songName;
+    songBanner.src = songs[songIndex].coverPath;
     audioElement.currentTime = 0;
     audioElement.play();
     masterPlay.classList.remove('fa-circle-play');
